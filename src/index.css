@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap");
+
+body {
+  background: linear-gradient(to right, #e96464, #64cee9);
+  font-family: "Noto Sans JP", sans-serif;
+
+  height: 100vh;
+  margin: 0;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#calculator-area {
+  display: grid;
+  column-gap: 1px;
+  grid-template:
+    "z x" 8em
+    "y x" 10em
+    "y x" 15em / 20em 18em;
+}
+
+#calculator-area > :nth-child(1) {
+  grid-area: z;
+}
+
+#calculator-area > :nth-child(2) {
+  grid-area: y;
+}
+
+#calculator-area > :nth-child(3) {
+  grid-area: x;
+}
+
+#display-area {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 4rem;
+
+  word-wrap: break-word;
+  word-break: break-all;
+
+  font-size: 1.5em;
+  color: white;
+
+  padding: 1em;
+  background-color: #1b1b1bad;
+  overflow-y: hidden;
+}
+
+#cur {
+  font-size: 1.5em;
+}
+
+#prev {
+  font-size: 0.7em;
+}
+
+#main-button-area {
+  display: grid;
+  /* 
+  column-gap: 1px;
+  row-gap: 1px; */
+  grid-template:
+    "a b c d" 5em
+    "h h h e" 5em
+    "h h h f" 5em
+    "h h h g" 5em
+    "h h h g" 5em / 5em 5em 5em 5em;
+}
+
+#main-button-area > :nth-child(1) {
+  grid-area: a;
+}
+
+#main-button-area > :nth-child(2) {
+  grid-area: b;
+}
+
+#main-button-area > :nth-child(3) {
+  grid-area: c;
+}
+
+#main-button-area > :nth-child(4) {
+  grid-area: d;
+}
+
+#main-button-area > :nth-child(5) {
+  grid-area: e;
+}
+
+#main-button-area > :nth-child(6) {
+  grid-area: f;
+}
+
+#main-button-area > :nth-child(7) {
+  grid-area: g;
+}
+
+#main-button-area > :nth-child(8) {
+  grid-area: h;
+}
+
+#digit-panel {
+  display: grid;
+
+  grid-template-columns: repeat(3, 5em);
+  grid-template-rows: repeat(4, 5em);
+  /* 
+  column-gap: 1px;
+  row-gap: 1px; */
+  direction: rtl;
+}
+
+.calculator-button {
+  color: white;
+  font-size: 1.4em;
+  background-color: #0000008f;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.calculator-button:hover {
+  color: #000000;
+  background-color: #cacaca;
+}
+
+#history-area {
+  background-color: #0000008f;
+  padding: 10px;
+  font-size: 1.5em;
+  color: white;
+  overflow-y: scroll;
+  position: relative;
+}
+
+#history-area ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#history-area span:hover {
+  color: black;
+  background-color: #cacacaad;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#clearHistoryButton {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 99%;
+  height: 2em;
+
+  cursor: pointer;
+
+  font-size: 1em;
+
+  border: none;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+
+  background-color: #ffffffc9;
+}
